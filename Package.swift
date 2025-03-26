@@ -15,7 +15,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/JohnSundell/ShellOut", .upToNextMajor(from: "2.3.0")),
         .package(url: "https://github.com/tuist/xcodeproj", .upToNextMajor(from: "8.3.1")),
-        .package(url: "https://github.com/luoxiu/Chalk", .exact("0.2.1")),
         .package(url: "https://github.com/kylef/Commander", .upToNextMajor(from: "0.9.1")),
         .package(url: "https://github.com/kylef/PathKit", .upToNextMajor(from: "1.0.1")),
         .package(url: "https://github.com/jpsim/Yams", .upToNextMajor(from: "5.0.1")),
@@ -51,33 +50,6 @@ let package = Package(
         .testTarget(
             name: "RuntimeLibaryTests",
             dependencies: ["SwiftyMocky"]
-        ),
-        // CLI Executable
-        .target(
-            name: "SwiftyMockyCLI",
-            dependencies: [
-                "Commander",
-                "SwiftyMockyCLICore",
-            ],
-            path: "./Sources/CLI/App"
-        ),
-        .target(
-            name: "SwiftyMockyCLICore",
-            dependencies: [
-                "ShellOut",
-                "Chalk",
-                "XcodeProj",
-                "PathKit",
-                "Yams",
-            ],
-            path: "./Sources/CLI/Core"
-        ),
-        .testTarget(
-           name: "SwiftyMockyCLICoreTests",
-           dependencies: [
-               "SwiftyMockyCLICore",
-               "SwiftyMocky",
-           ]
-        ),
+        )
     ]
 )
