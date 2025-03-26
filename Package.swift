@@ -9,8 +9,6 @@ let package = Package(
         // XCTest Runtime libraries
         .library(name: "SwiftyMocky", targets: ["SwiftyMocky"]),
         .library(name: "SwiftyPrototype", targets: ["SwiftyPrototype"]),
-        // CLI Executable
-        .executable(name: "swiftymocky", targets: ["SwiftyMockyCLI"]),
     ],
     dependencies: [
         .package(url: "https://github.com/JohnSundell/ShellOut", .upToNextMajor(from: "2.3.0")),
